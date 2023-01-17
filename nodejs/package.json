@@ -1,0 +1,26 @@
+{
+  "name": "avaliacao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/GuilhermeFC/avaliacao.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/GuilhermeFC/avaliacao/issues"
+  },
+  "homepage": "https://gitlab.com/GuilhermeFC/avaliacao#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "jquerry": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}

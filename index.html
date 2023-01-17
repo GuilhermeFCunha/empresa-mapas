@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avaliação 17.01</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+</head>
+
+<body>
+  <main>
+    <form>
+      <fieldset class="field">
+        <label for="empresa">Empresa</label>
+        <input class="form1" type="text" id="empresa" required>
+
+        <label for="lat">Latitude</label>
+        <input class="form1" type="number" id="lat" required>
+
+        <label for="long">Longitude</label>
+        <input class="form1" type="number" id="long" required>
+
+        <label for="ind">Indicador</label>
+        <input class="form1" type="text" id="ind">
+
+        <input type="submit" value="Enviar" class="submit">
+      </fieldset>
+    </form>
+    <h1></h1>
+  </main>
+  <section class="map">
+    <h3 class="titulo-2">Empresas cadastradas</h3>
+    <p></p>
+    <div id="map">
+      <script>
+        var empresas = [
+          { nome: 'teste', lat: '-16', long: '-52', pontos: '10' },
+          { nome: 'teste2', lat: '-16', long: '-53', pontos: '0' }
+        ]
+        const map = L.map('map').setView([-16.641, -49.235], 13);
+        const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+        ).addTo(map);
+
+        empresas.map(function (empresa) {
+          L.marker([empresa.lat, empresa.long]).addTo(map)
+        })
+
+
+
+        function loadDoc() {
+
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              console.log(this.responseText)
+            }
+          };
+
+          xhttp.open("POST", "http://127.0.0.1:3000", true);
+          xhttp.send();
+        }
+        loadDoc();
+
+      </script>
+    </div>
+  </section>
+</body>
+
+</html>

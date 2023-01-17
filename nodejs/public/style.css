@@ -1,0 +1,9 @@
+#map {
+    width: 1080px; 
+    height: 640px;
+}
+.form1 {display: grid;
+}
+.field {
+    width: fit-content;
+}
